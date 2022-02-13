@@ -1,0 +1,46 @@
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="topnav">
+        <a href="/"><img src="/images/logo4c.jpeg" class="logo-image" alt=""></a>
+        <a href="/" id="logo">Code-terations</a>
+        <ul>
+            <% if(!user){%>
+                <li><a href="/users/new">Sign up </a></li>
+                <li><a href="/users/login">Log in </a></li>
+            <%}
+            else{%>
+                <li><a href="/users/logout">Log out </a></li>
+                <li><a href="/users/profile">Profile </a></li>
+                <li><a href="/event/new">Start a new connection </a></li>
+            <%}%>
+            
+        </ul>
+        <hr class="hr">
+        <a href="/event/"><p>Connections</p></a>
+        <ul>
+            <%if(username){%> 
+                <li><a href="/users/profile">Welcome, <%=username %></a></li>
+                <%}%>
+        </ul>
+        
+        
+    </div>
+    <% if(errorMessages.length > 0) {%>
+        <% errorMessages.forEach(message=>{%>
+            <div class='error'>
+                <%=message%>
+            </div>
+            <%});%>
+                <%}%>
+    
+                    <% if(successMessages.length > 0) {%>
+    
+                        <% successMessages.forEach(message=>{%>
+                            <div class='success'>
+                                <%=message%>
+                            </div>
+                            <%});%>
+                                <%}%>

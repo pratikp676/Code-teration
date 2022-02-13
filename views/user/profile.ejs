@@ -1,0 +1,92 @@
+<%- include('../partials/title.ejs') %>
+<title>My Profile</title>
+<%- include('../partials/header.ejs') %>
+    <div class = "content">
+        <!-- <h2>Welcome, <%=user.firstName + " " + user.lastName %> </h2>
+        <% if(events.length){%>
+        <p>You have created the following stories:</p>
+        <% events.forEach(event => {%>
+            <a href = '/events/<%= event.id %>'><p><%=event.title %></p></a>
+        <%});
+    } else {%>
+        <p>You have not created any story</p>
+    <%}%> -->
+    <main>
+        <section>
+            <h2 class="textAlignCentre">Welcome, <%=user.firstName + " "+ user.lastName %></h2>
+            <br>
+            <p>
+                <h2><%= username %>'s Events</h2>
+                <% if(events.length > 0) {%>
+                    
+                    <table class='profile'>
+                        <tr>
+                            <th>Events</th>
+                            <th>Topic</th>
+                            <th>Actions</th>
+                        </tr>
+                                <% events.forEach(event => {%>
+                                    <tr>
+                                        <td>
+                                            <a href = '/event/<%= event.id%>'><p><%=event.title%></p></a>
+                                        </td>
+                                        <td>
+                                            <p><%=event.topic %></p>
+                                        </td>
+                                        <td>
+                                            <form>
+                                                <button id="button" type='submit' formmethod="POST" formaction="/event/<%= event._id %>?_method=DELETE">Delete</button>
+                                                <button id="button1" type='submit' formmethod="GET" formaction="/event/<%= event._id %>/edit">Edit</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                               <% });
+                                } else {%>
+                                <p>You have not created any stories</p>
+                                <%}%>
+                        </tr>
+                    </table>
+            </p>
+            <br>
+            <p>
+                <h2><%= username %>'s RSVPs</h2>
+                <% if(rsvps.length > 0) {%>
+                    
+                    <table class='profile'>
+                        <tr>
+                            <th>Connections</th>
+                            <th>Catogery</th>
+                            <th>Going?</th>
+                            <th>Actions</th>
+                        </tr>
+                                <% rsvps.forEach(rsvp => {%>
+                                    <tr>
+                                        <td>
+                                            <a href = '/event/<%= rsvp.event.id%>'><p><%=rsvp.event.title%></p></a>
+                                        </td>
+                                        <td>
+                                            <p><%=rsvp.event.topic %></p>
+                                        </td>
+                                        <td>
+                                            <p><%=rsvp.status %></p>
+                                        </td>
+                                        <td>
+                                            <form>
+                                                <button id="button" type='submit' formmethod="POST" formaction="/event/rsvp/<%= rsvp._id %>?_method=DELETE">Delete</button>
+                                                <button id="button1" type='submit' formmethod="GET" formaction="/event/<%= rsvp.event._id %>">Edit</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                               <% });
+                                } else {%>
+                                <p>You have no rsvps!</p>
+                                <%}%>
+                        </tr>
+                    </table>
+            </p>
+
+        </section>
+    </main>
+       
+    </div>
+    <%- include('../partials/footer.ejs')%>

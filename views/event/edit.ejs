@@ -1,0 +1,83 @@
+<%- include('../partials/title.ejs') %>
+<title>Edit</title>
+<%- include('../partials/header.ejs') %>
+<%- include('./dateFormat.ejs')%>
+    <!-- <div class="topnav">
+        
+    </div> -->
+
+    <div class="content">
+        <div class="container">
+            <form method = "POST" action="/event/<%= event._id %>?_method=PUT">
+              <div class="row">
+                <div class="col-25">
+                  <label for="topic">Topic </label>
+                </div>
+                <div class="col-25">
+                  <input type="text" id="topic" value="<%=event.topic %>" name="topic" placeholder="Choose a topic.." required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="title">Title </label>
+                </div>
+                <div class="col-25">
+                  <input type="text" id="title" value="<%=event.title %>" name="title" placeholder="Give a title" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="details">Details</label>
+                </div>
+                <div class="col-25">
+                  <textarea id="details" name="details" placeholder="Event details"  style="height: 100px" minLength='10' required> <%= event.details %> </textarea>
+                </div>
+                </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="location">Location</label>
+                </div>
+                <div class="col-25">
+                  <input type="text" id="location" value="<%=event.location %>" name="location" placeholder="Choose a location" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="date">Date</label>
+                </div>
+                <div class="col-25">
+                  <input type="date" id="date" name="date" value="<%=editdate(event.date) %>" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="start">Start</label>
+                </div>
+                <div class="col-25">
+                  <input type="time" id="start" name="start" value="<%=event.start %>" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="end">End</label>
+                </div>
+                <div class="col-25">
+                  <input type="time" id="end" name="end" value="<%=event.end %>" required>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                      <label for="imageURL">Image URL</label>
+                    </div>
+                    <div class="col-25">
+                      <input type="url" id="imageURL" value="<%=event.imageURL %>" placeholder="https://" name="imageURL" required>
+                    </div>
+                </div>
+              <div class="row">
+                <input type="submit" value="Update">
+              </div>
+            </form>
+          </div>
+    </div>
+
+    <%- include('../partials/footer.ejs') %>

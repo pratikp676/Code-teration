@@ -1,0 +1,24 @@
+<%- include('../partials/title.ejs') %>
+<title>Connections</title>
+<%- include('../partials/header.ejs') %>
+
+
+    <div class = "container">
+        <% if(Object.keys(events).length > 0) {%>
+            <h1>Select an event to participate</h1>
+            <% Object.keys(events).forEach(function (key)
+            { %>
+
+                <h2><%=key %></h2>
+                <% for(var i=0; i < events[key].length; i++) {  %>
+                <a href="/event/<%=events[key][i]._id %>">
+                    <p><%=events[key][i].title %></p>
+                </a>
+                <%}});
+        }
+        else {%>
+            <p>There are no events to display</p>    
+        <%}%>
+    </div>
+
+    <%- include('../partials/footer.ejs') %>

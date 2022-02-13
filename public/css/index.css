@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+    font-family: system-ui;
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: #00703c;
+  }
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    /* padding: 15px 15px; */
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  } */
+  
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  .logo-image{
+    width: 60px;
+    height: 50px;
+    border-radius: 0%;
+    overflow: hidden;
+    float: left;
+    padding: 15px 15px;
+    
+}
+.topnav p {
+    float: left;
+    color: #f2f2f2;
+    text-align: left;
+    padding: 0px 15px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .topnav ul {
+    list-style-type: none;
+    /* margin: 0;
+    padding: 0; */
+    overflow: hidden;
+    background-color: #00703c;
+  }
+  
+  .topnav li {
+    float: right;
+  }
+  
+  .topnav  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 15px;
+    text-decoration: none;
+  }
+  
+  .topnav li a:hover:not(.active) {
+    background-color: #04AA6D;
+  }
+  
+  .topnav .active {
+    background-color: #04AA6D;
+  }
+
+  .hr {
+    height:1px;
+    width: 98%;
+    border-width:0;
+    color:gray;
+    background-color:white;
+  }
+
+  .content {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .content h2 {
+    color: rgba(0, 0, 0, 0.815);
+    text-align: center;
+    padding: 0px 15px;
+    text-decoration: none;
+  }
+
+  .content p {
+    color: rgba(0, 0, 0, 0.815);
+    text-align: left;
+    padding: 0px 100px;
+    text-decoration: none;
+
+  }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #00703c;
+    color: white;
+    /* padding: 0px 0px; */
+ }
+
+ .footer li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 1px 15px;
+    text-decoration: none;
+ }
+
+ .footer ul {
+  list-style-type: none;
+  /* margin: 0;
+  padding: 0; */
+  overflow: hidden;
+  background-color: #00703c;
+}
+
+.footer li {
+  float: left;
+}
+
+#logo {
+  color: #f2f2f2;
+    text-align: center;
+    padding: 30px 5px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  
+}
